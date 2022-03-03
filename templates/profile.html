@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <main class="main-body">
+        <aside class="aside">
+            <div>
+                <div class="logo-container">
+                    <img src="/assets/images/logo.png" alt="organizable-logo" class="logo">
+                </div>
+                <ul>
+                    <li data-value="notes" class="option">
+                        <img src="/assets/icons/boards.svg" alt="boards-icon" class="icon">
+                        <span href="#notes">My Boards</span>
+                    </li>
+                    <li data-value="trash" class="option">
+                        <img src="/assets/icons/box.svg" alt="box-icon" class="icon">
+                        <span href="#trash">Closed Boards</span></li>
+                    <li data-value="trash" class="option">
+                        <img src="/assets/icons/user.svg" alt="user-icon" class="icon">
+                        <span href="#trash">My Profile</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="option option-exit">
+                <img src="/assets/icons/exit.svg" alt="user-icon" class="icon">
+                <span class="primary-500">Logout</span>
+            </div>
+        </aside>
+        <div id="main-content">
+            <h1 class="heading">My Profile</h1>
+            <div class="container flex flex-column gap-8 items-center">
+                <form action="" class="full-width container-sm flex flex-column gap-4">
+                  <div class="input">
+                    <label for="input-1" class="content-xs overline">Username</label>
+                    <div class="input__container">
+                      <img
+                        src="/assets/icons/user.svg"
+                        alt="user-icon"
+                        class="input__icon"
+                      />
+                      <input
+                        type="text"
+                        placeholder="placeholder"
+                        value="testino"
+                        class="input__content"
+                        id="input-1"
+                        name="input-1"
+                        required
+                      />
+                    </div>
+                    <span class="input__error-message">Error message</span>
+                  </div>
+                  <div class="input">
+                    <label for="input-2" class="content-xs overline">Email</label>
+                    <div class="input__container">
+                      <img
+                        src="/assets/icons/mail.svg"
+                        alt="user-icon"
+                        class="input__icon"
+                      />
+                      <input
+                        type="email"
+                        placeholder="user@example.com"
+                        value="testino@mail.com"
+                        class="input__content"
+                        id="input-2"
+                        name="input-2"
+                        required
+                      />
+                    </div>
+                    <span class="input__error-message">Error message</span>
+                  </div>
+                  <button type="submit" class="button button--primary width-full">
+                    Update Profile
+                  </button>
+                  <button type="button" class="button button--secondary width-full">
+                    Delete My Account
+                  </button>
+                </form>
+              </div>
+        </div>
+      </main>
+</body>
+</html>

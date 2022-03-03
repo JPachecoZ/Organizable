@@ -1,0 +1,81 @@
+.js-return {
+    cursor: pointer;
+}
+
+.board-view {
+    width: 100vw;
+    height: calc(100vh - 48px);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.todo-lists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.list {
+    padding: 0.5rem;
+    border-radius: 8px;
+    width: 280px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--gray-100);
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+  
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.card img {
+    cursor: pointer;
+}
+
+.card-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.card-form__input {
+    border-radius: 8px;
+    border: none;
+    background-color: var(--white-translucent-50);
+    width: 100%;
+    padding: 0px 4px;
+}
+
+.card-form__input:focus {
+outline: 2px solid var(--gray-200);
+}
+
+.card-form button {
+flex-shrink: 0;
+}
+
+.list__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list__header img {
+    cursor: pointer;
+}
+  

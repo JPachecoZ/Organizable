@@ -23,7 +23,7 @@ async function init() {
   // }
 }
 
-//init();
+init();
 
 //login({username: "javier", password: "123456"});
 //let board = await getBoard(380);

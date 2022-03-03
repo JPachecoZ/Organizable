@@ -1,0 +1,50 @@
+.aside {
+    background-color: white;
+    width: 240px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+}
+
+.aside ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.aside .option {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    width: 100%;
+    height: 40px;
+}
+
+.aside .option:hover,
+.aside .selected {
+    background: var(--primary-100);
+    border-left: 4px solid var(--primary-400);
+    cursor: pointer;
+}
+
+.aside .logo-container {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+}
+
+.aside .logo {
+    cursor: pointer;
+}
+
+.aside .option-exit {
+    height: 64px;
+    border-top: 2px solid var(--primary-400);
+}
+
+.aside .icon {
+    width: 18px;
+}

@@ -1,0 +1,49 @@
+#root {
+  min-height: 100vh;
+}
+
+.section {
+  padding: 64px 16px;
+}
+
+.section-lg {
+  padding: 96px 0px;
+}
+
+.section-full {
+  height: 100vh;
+  padding: 96px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-sm {
+  padding: 32px;
+}
+
+.container {
+  max-width: 760px;
+  width: 100%;
+  margin: auto;
+}
+
+.container-sm {
+  max-width: 480px;
+  width: 100%;
+  margin: auto;
+}
+
+.container-lg {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.container-xl {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.main-body {
+  display: flex;
+}
