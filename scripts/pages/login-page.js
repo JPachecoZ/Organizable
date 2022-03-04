@@ -86,7 +86,7 @@ function listenLogin() {
       const user = await login(data);
       STORE.user = user;
       await STORE.fetchBoards();
-      DOMHandler.load(HomePage);
+      DOMHandler.load("#root", HomePage);
 
     } catch (error) {
       LoginPage.state.loginError = error.message;
@@ -100,7 +100,7 @@ function listenToSignup() {
     const toSignupLink = document.querySelector(".to-signup");
 
     toSignupLink.addEventListener("click", () => {
-      DOMHandler.load(SignupPage)
+      DOMHandler.load("#root", SignupPage)
     })
 
   } catch (error) {

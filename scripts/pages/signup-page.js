@@ -3,6 +3,7 @@ import DOMHandler from "../dom-handler.js";
 
 // Services
 import { signup } from "../services/session-service.js";
+import HomePage from "./home-page.js";
 
 // Views
 
@@ -144,6 +145,7 @@ function listenSignup() {
 
       const user = await signup(data);
       alert("Se creo " + user.id);
+      DOMHandler.load("#root", HomePage);
       
 
     } catch (error) {
@@ -158,7 +160,7 @@ function listenToLogin() {
     const toSignupLink = document.querySelector(".to-login");
 
     toSignupLink.addEventListener("click", () => {
-      DOMHandler.load(LoginPage);
+      DOMHandler.load("#root", LoginPage);
     })
 
   } catch (error) {

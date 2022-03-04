@@ -1,11 +1,10 @@
-const DOMHandler = (function (parentSelector) {
-  const parent = document.querySelector(parentSelector);
-
-  if (!parent) throw new Error("Parent container not found");
+const DOMHandler = (function () {
 
   return {
     module: null,
-    load(module) {
+    load(location, module) {
+      const parent = document.querySelector(location);
+      if (!parent) throw new Error("Parent container not found");
       this.module = module;
       parent.innerHTML = module;
       module.addListeners();
@@ -14,6 +13,6 @@ const DOMHandler = (function (parentSelector) {
       this.load(this.module);
     }
   };
-})("#root");
+})();
 
 export default DOMHandler

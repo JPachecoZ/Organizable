@@ -13,7 +13,7 @@ import { login, signup } from "./scripts/services/session-service.js";
 import LoginPage from "./scripts/pages/login-page.js";
 
 async function init() {
-  DOMHandler.load(LoginPage)
+  DOMHandler.load("#root", LoginPage)
   // try {
   //   const token = sessionStorage.getItem(tokenkey);
   //   if (!token) throw new Error();

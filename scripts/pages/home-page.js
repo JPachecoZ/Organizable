@@ -8,46 +8,56 @@ import { logout } from "../services/session-service.js"
 
 // Pages
 import LoginPage from "./login-page.js";
+import MyBoards from "./MyBoards-main.js";
 //import NewContactPage from "./new-contact-page.js";
 //import ContactPage from "./contact-page.js";
 
 // Draws page
-function renderBoard(board) {
-  return `
-  <div class="board-box">
-    <div class="profile" data-id-detail="${board.id}">
-      <img src="/img/Profile.svg"/>
-      <span>${board.name}</span>
-    </div>
-    <a class="star" data-id-favorite="${board.id}">
-      ${board.starred ? '<img src="/img/star_fav.svg" /> <img src="/img/starin.svg"  class="favon" />' : '<img src="/img/Star.svg"/>'}
-    </a>
-  </div>
-  `
-}
-
 function render() {
-  const boardList = STORE.boards;
-  const starredList = STORE.starredBoards;
   return `
-    <section style="position: relative">
-      <div class="header">
-        <h1>Organizable</h1>
-        <a class="logout-link">Logout</a>
-      </div>
-      <div class="container board-list">
-        ${(starredList.length > 0) ? `<h2 class="sub-title">Starred (${starredList.length})</h2>` : ''}
-        <div class="list">
-          ${starredList.map(renderBoard).join("")}
+  <main class="main-body">
+    <aside class="aside">
+      <div>
+        <div class="logo-container">
+          <img
+            src="../assets/images/logo.png"
+            alt="organizable-logo"
+            class="logo"
+          />
         </div>
-        <h2 class="sub-title">Boards (${boardList.length})</h2>
-        <div class="list">
-          ${boardList.map(renderBoard).join("")}
-        </div>
+        <ul>
+          <li data-value="boards" class="option selected">
+            <img
+              src="../assets/icons/boards.svg"
+              alt="boards-icon"
+              class="icon"
+            />
+            <span href="#notes">My Boards</span>
+          </li>
+          <li data-value="closed" class="option">
+            <img src="../assets/icons/box.svg" alt="box-icon" class="icon" />
+            <span href="#trash">Closed Boards</span>
+          </li>
+          <li data-value="profile" class="option">
+            <img
+              src="../assets/icons/user.svg"
+              alt="user-icon"
+              class="icon"
+            />
+            <span href="#profile">My Profile</span>
+          </li>
+        </ul>
       </div>
-      <div class="add-board to-add-board"></div>
-    </section>
-    
+      <div class="option option-exit logout-link">
+        <img src="../assets/icons/exit.svg" alt="user-icon" class="icon" />
+        <span class="primary-500">Logout</span>
+      </div>
+    </aside>
+    <div id="main-content">
+      <div class="content bg-gray-100 js-board-display">
+        ${MyBoards}
+      </div>
+  </main>
   `
 }
 
@@ -59,11 +69,33 @@ function listenLogout() {
     event.preventDefault();
     try {
       await logout();
-      DOMHandler.load(LoginPage)
+      DOMHandler.load("#root", LoginPage);
     } catch (error) {
       console.log(error)
     }
   });
+}
+
+function listenMyBoards(){
+  const options = document.querySelectorAll(".option");
+  options.forEach((option) =>{
+    option.addEventListener('click', async(event) => {
+      event.preventDefault();
+      switch (option.dataset.value){
+        case 'boards':
+          DOMHandler.load(".js-board-display", MyBoards);
+        case 'closed':
+          DOMHandler.load(".js-board-display", Closed);
+        case 'profile':
+          DOMHandler.load(".js-board-display", Profile);
+      }
+    })
+  })
+
+  const selected_option = document.querySelector(".selected");
+  selected_option.classList.remove('selected');
+
+
 }
 
 function listenFavorite() {
@@ -116,10 +148,9 @@ const HomePage = {
     return render();
   },
   addListeners() {
-    //listenLogout();
-    //listenFavorite();
-    //listenToAddContact();
-    //listenToShowContact();
+    listenLogout();
+    //listenToggleClosed();
+    //listenToShowBoard();
   }
 };
 
