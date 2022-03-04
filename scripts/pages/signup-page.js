@@ -1,8 +1,9 @@
 // Helpers
 import DOMHandler from "../dom-handler.js";
+import STORE from "../store.js";
 
 // Services
-import { signup } from "../services/session-service.js";
+import { signup } from "../services/users-service.js";
 import HomePage from "./home-page.js";
 
 // Views
@@ -145,8 +146,9 @@ function listenSignup() {
 
       const user = await signup(data);
       alert("Se creo " + user.id);
+      STORE.user = user;
+      await STORE.fetchBoards();
       DOMHandler.load("#root", HomePage);
-      
 
     } catch (error) {
       SignupPage.state.signupError = error.message;

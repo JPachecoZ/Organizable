@@ -1,4 +1,4 @@
-import STORE from "../store.js";
+import STORE from "../../store.js";
 
 function renderStarredButtons(){
   return `

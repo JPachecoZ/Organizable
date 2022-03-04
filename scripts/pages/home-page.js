@@ -8,7 +8,9 @@ import { logout } from "../services/session-service.js"
 
 // Pages
 import LoginPage from "./login-page.js";
-import MyBoards from "./MyBoards-main.js";
+import MyBoards from "./home-pages/MyBoards-main.js";
+import ClosedPage from "./home-pages/Closed-main.js";
+import Profile from "./home-pages/Profile.js";
 //import NewContactPage from "./new-contact-page.js";
 //import ContactPage from "./contact-page.js";
 
@@ -76,26 +78,35 @@ function listenLogout() {
   });
 }
 
-function listenMyBoards(){
+function listenOptions(){
   const options = document.querySelectorAll(".option");
   options.forEach((option) =>{
     option.addEventListener('click', async(event) => {
       event.preventDefault();
+      const toSelectOption = event.target.closest(".option");
+      changeSelection(toSelectOption);
       switch (option.dataset.value){
-        case 'boards':
+        case "boards":
+          console.log(option.dataset.value);
           DOMHandler.load(".js-board-display", MyBoards);
-        case 'closed':
-          DOMHandler.load(".js-board-display", Closed);
-        case 'profile':
+          break;
+        case "closed":
+          console.log(option.dataset.value);
+          DOMHandler.load(".js-board-display", ClosedPage);
+          break;
+        case "profile":
+          console.log(option.dataset.value);
           DOMHandler.load(".js-board-display", Profile);
+          break;
       }
     })
   })
+}
 
-  const selected_option = document.querySelector(".selected");
-  selected_option.classList.remove('selected');
-
-
+function changeSelection(newSelection){
+  const selectedOption = document.querySelector(".selected");
+  selectedOption.classList.remove('selected');
+  newSelection.classList.add('selected');
 }
 
 function listenFavorite() {
@@ -149,7 +160,7 @@ const HomePage = {
   },
   addListeners() {
     listenLogout();
-    //listenToggleClosed();
+    listenOptions();
     //listenToShowBoard();
   }
 };

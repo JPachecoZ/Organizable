@@ -7,7 +7,7 @@ import { tokenkey } from "./scripts/config.js";
 import { createList, updateList, deleteList } from "./scripts/services/lists-service.js";
 import { getBoard, updateBoard, deleteBoard, createBoard } from "./scripts/services/boards-service.js";
 import { createCard, updateCard, deleteCard } from "./scripts/services/cards-service.js";
-import { login, signup } from "./scripts/services/session-service.js";
+import { login } from "./scripts/services/session-service.js";
 
 // Pages
 import LoginPage from "./scripts/pages/login-page.js";
