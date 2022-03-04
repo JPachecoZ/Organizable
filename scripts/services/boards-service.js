@@ -36,8 +36,8 @@ export async function toggleClosed(boardId, data = { closed }) {
   return board;
 }
 
-export function deleteBoard(boardId) {
-  return apiFetch("boards/" + boardId, { method: "DELETE" });
+export async function deleteBoard(boardId) {
+  await apiFetch("boards/" + boardId, { method: "DELETE" });
 }
 
 // export async function toggleFavorite(id) {

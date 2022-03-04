@@ -5,19 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-      <header class="bg-gray-100 full-width flex justify-center p-y-3">
-        <div class="flex justify-center gap-4 js-return">
-          <img src="/assets/icons/arrow.svg" alt="">
-          <img src="/assets/images/logo.png" alt="organizable logo" />
-        </div>
-      </header>
-      <section
-        class="board-view bg-green-100"
-        data-listName="lists"
-      >
+    <header class="bg-gray-100 full-width flex justify-center p-y-3">
+      <div class="flex justify-center gap-4 js-return">
+        <img src="../assets/icons/arrow.svg" alt="" />
+        <img src="../assets/images/logo.png" alt="organizable logo" />
+      </div>
+    </header>
+    <section class="board-view bg-green-100" data-listName="lists">
       <h1 class="heading">Organizable</h1>
       <div class="todo-lists">
         <!-- here begins a list template -->
@@ -25,26 +22,23 @@
           <div class="list__header">
             <h2 class="heading heading--xs">To do</h2>
             <div class="flex gap-4">
-              <img src="/assets/icons/edit.svg" alt="edit" />
-              <img src="/assets/icons/trash.svg" alt="trash" />
+              <img src="../assets/icons/edit.svg" alt="edit" />
+              <img src="../assets/icons/trash.svg" alt="trash" />
             </div>
           </div>
           <hr class="full-width m-0" />
-          <div
-            class="card-list js-list-container"
-            data-listName="cards-todo"
-          >
+          <div class="card-list js-list-container" data-listName="cards-todo">
             <div class="card" data-id="1">
               <p>Add animations</p>
-              <img src="/assets/icons/trash.svg" alt="trash" />
+              <img src="../assets/icons/trash.svg" alt="trash" />
             </div>
             <div class="card" data-id="2">
               <p>Refactor functions</p>
-              <img src="/assets/icons/trash.svg" alt="trash" />
+              <img src="../assets/icons/trash.svg" alt="trash" />
             </div>
             <div class="card" data-id="3">
               <p>Improve array</p>
-              <img src="/assets/icons/trash.svg" alt="trash" />
+              <img src="../assets/icons/trash.svg" alt="trash" />
             </div>
           </div>
           <form action="" class="card-form">
@@ -57,7 +51,7 @@
               class="button button--secondary button--sm button--only-icon"
             >
               <img
-                src="/assets/icons/add.svg"
+                src="../assets/icons/add.svg"
                 alt="add icon"
                 class="button__icon"
               />
@@ -79,7 +73,7 @@
                 class="button button--secondary button--sm button--only-icon"
               >
                 <img
-                  src="/assets/icons/tick.svg"
+                  src="../assets/icons/tick.svg"
                   alt="add icon"
                   class="button__icon"
                 />
@@ -88,7 +82,7 @@
                 class="button button--subtle-2 button--sm button--only-icon"
               >
                 <img
-                  src="/assets/icons/cross.svg"
+                  src="../assets/icons/cross.svg"
                   alt="add icon"
                   class="button__icon"
                 />
@@ -97,21 +91,18 @@
           </div>
           <!-- here ends a edit list header template -->
           <hr class="full-width m-0" />
-          <div
-            class="card-list js-list-container"
-            data-listName="cards-todo"
-          >
+          <div class="card-list js-list-container" data-listName="cards-todo">
             <div class="card" data-id="1">
               <p>Add animations</p>
-              <img src="/assets/icons/trash.svg" alt="trash" />
+              <img src="../assets/icons/trash.svg" alt="trash" />
             </div>
             <div class="card" data-id="2">
               <p>Refactor functions</p>
-              <img src="/assets/icons/trash.svg" alt="trash" />
+              <img src="../assets/icons/trash.svg" alt="trash" />
             </div>
             <div class="card" data-id="3">
               <p>Improve array</p>
-              <img src="/assets/icons/trash.svg" alt="trash" />
+              <img src="../assets/icons/trash.svg" alt="trash" />
             </div>
           </div>
           <form action="" class="card-form">
@@ -124,7 +115,7 @@
               class="button button--secondary button--sm button--only-icon"
             >
               <img
-                src="/assets/icons/add.svg"
+                src="../assets/icons/add.svg"
                 alt="add icon"
                 class="button__icon"
               />
@@ -144,7 +135,7 @@
                 class="button button--secondary button--sm button--only-icon"
               >
                 <img
-                  src="/assets/icons/add.svg"
+                  src="../assets/icons/add.svg"
                   alt="add icon"
                   class="button__icon"
                 />
@@ -154,8 +145,7 @@
         </div>
         <!-- here ends a new list form template -->
       </div>
-
-      </section>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="test.js"></script>
